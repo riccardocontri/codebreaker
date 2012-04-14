@@ -1,0 +1,11 @@
+source 'http://rubygems.org'
+
+gem 'rspec'
+gem 'rspec-rails'
+gem 'cucumber'
+gem 'cucumber-rails'
+gem 'database_cleaner'
+gem 'webrat'
+gem 'selenium-client'
+gem 'rails'
+#gem 'spork'
