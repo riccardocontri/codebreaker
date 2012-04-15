@@ -7,13 +7,37 @@ Funzionalità: lo Scassinatore fa dei tentativi
   Per ogni numero INDOVINATO NELLA POSIZIONE ESATTA, nel punteggio compare un '+'.
   Per ogni numero INDOVINATO MA NELLA POSIZIONE SBAGLIATA, nel punteggio compare un '-'.
   Per ogni numero SBAGLIATO nel punteggio non compare niente.
+
+  Schema dello scenario:
+    Dato che la combinazione segreta è "<combinazione>"
+    Quando faccio il tentativo "<tentativo>"
+    Allora allora il punteggio dovrebbe essere "<punteggio>"
   
-  Scenario: tutti i numeri indovinati esattamente
-    Dato che la combinazione segreta è '1234'
-    Quando faccio il tentativo '1234'
-    Allora allora il punteggio dovrebbe essere '++++'
+  Esempi: nessun numero indovinato
+    | combinazione | tentativo | punteggio |
+    | 1234         | 5555      |           |
   
-  Scenario: 2 numeri indovinati esattamente e 2 indovinati ma fuori posto
-    Dato che la combinazione segreta è '1234'
-    Quando faccio il tentativo '1243'
-    Allora allora il punteggio dovrebbe essere '++--'
+  Esempi: un solo numero indovinato
+    | combinazione | tentativo | punteggio |
+    | 1234         | 1555      | +         |
+    | 1234         | 2555      | -         |
+  
+  Esempi: due soli numeri indovinati
+    | combinazione | tentativo | punteggio |
+    | 1234         | 5254      | ++        |
+    | 1234         | 5154      | +-        |
+    | 1234         | 2545      | --        |
+  
+  Esempi: tre soli numeri indovinati
+    | combinazione | tentativo | punteggio |
+    | 1234         | 5234      | +++       |
+    | 1234         | 5134      | ++-       |
+    | 1234         | 5124      | +--       |
+    | 1234         | 5123      | ---       |
+  
+  Esempi: tutti i numeri indovinati
+    | combinazione | tentativo | punteggio |
+    | 1234         | 1234      | ++++      |
+    | 1234         | 1243      | ++--      |
+    | 1234         | 1423      | +---      |
+    | 1234         | 4321      | ----      |
