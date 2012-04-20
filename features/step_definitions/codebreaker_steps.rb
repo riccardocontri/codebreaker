@@ -1,6 +1,10 @@
 # encoding: utf-8
 
 class Uscita
+  def puts(msg)
+    messaggi << msg
+  end
+  
   def messaggi
     @messaggi ||= []
   end
